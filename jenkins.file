@@ -1,6 +1,8 @@
+#jenkins file 
+#author : sandeep seetha
 pipeline {
     agent any
-
+          
     stages {
         stage('Checkout') {
             steps {
