@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the Git repository
+                checkout scm
+            }
+        }
+
+        stage('Pull Git content') {
+            steps {
+                // Create a folder and copy the Git content to it
+                script {
+                    sh 'mkdir pulled_content'
+                    sh 'cp -r * pulled_content'
+                }
+            }
+        }
+    }
+}
